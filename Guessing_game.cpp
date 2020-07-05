@@ -22,7 +22,7 @@ cin>>guess;
 if(guess<number)
 cout<<"Too low"<<endl;
 
-if(guess>number)
+if(guess>number) 
  cout<<"Too high"<<endl;
 
 trycount++;
