@@ -1,3 +1,9 @@
+#this is a chatbot that sends random dog photos
+#
+#
+
+
+
 from telegram.ext import Updater, InlineQueryHandler, CommandHandler
 from telegram.ext.dispatcher import run_async
 import requests
