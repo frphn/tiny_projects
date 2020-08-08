@@ -4,6 +4,9 @@ using namespace std;
 
 wstring tetromino[7];
 
+//create a playing field
+int nFieldWidth = 12;
+int nFieldHeight = 18;
 
 //px = x, py = y, r = degrees of rotation
 
@@ -16,7 +19,7 @@ int Rotate(int px, int py, int r)
         case 2: return 15 - (py*4) - px;    // 180 degrees
         case 3: return 3 - py +(px*4);      // 270 degrees
     }
-    return 0;
+    return 0; //returns appropriate index given the equations for rotations
 }
 
 
