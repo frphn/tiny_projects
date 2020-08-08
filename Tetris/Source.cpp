@@ -16,6 +16,10 @@ unsigned char *pField = nullptr; //Note: not statically allocated, rather dynami
 //Author makes case; reason for using unsigned char is he wants 0 to represent empty space
 // 1 to reprepresent a part of the shape
 //2 to rep a diff shape
+//including boundary wall
+//
+//
+//note: All of our map info is stored in one array
 //px = x, py = y, r = degrees of rotation
 
 int Rotate(int px, int py, int r)
@@ -69,6 +73,13 @@ int main()
     tetromino[6].append(L".XX.");
     tetromino[6].append(L".X..");
     tetromino[6].append(L".X..");
+
+
+    //initialize array for playing field
+    pField= new unsigned char[nFieldWidth*nFieldHeight];
+    for (int x = 0; x <nFieldWidth; x++) //Board Boundary
+        for(int y = 0; y <nFieldHeight; y++)
+            pField[y*nFieldWidth+x] = (x == 0 || x == nFieldWidth -1 || y == nFieldHeight-1) ? 9 : 0;  
 
 
     return 0;
