@@ -5,9 +5,17 @@ using namespace std;
 wstring tetromino[7];
 
 //create a playing field
+//defined by fieldwidth, fieldheight
+//store elements of field as array of unsignedchars
+
 int nFieldWidth = 12;
 int nFieldHeight = 18;
+unsigned char *pField = nullptr; //Note: not statically allocated, rather dynamically
 
+
+//Author makes case; reason for using unsigned char is he wants 0 to represent empty space
+// 1 to reprepresent a part of the shape
+//2 to rep a diff shape
 //px = x, py = y, r = degrees of rotation
 
 int Rotate(int px, int py, int r)
